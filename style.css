@@ -1,0 +1,320 @@
+/*
+Theme Name: The Tigress Theme
+Author: Amanda Krauss
+Author URI: http://www.amandakrauss.com
+Description: A custom, single-page, responsive theme for the Tigress Pub
+Version: 2.0
+
+After I made this site I got free drinks for a year. I've tried every one on the menu and they're always
+awesome. Stop by the Tigress if you're in Austin!
+
+/* Base/Reset Structure
+-------------------------------------------------------------- */
+
+/*
+HTML5 display definitions
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+* {margin: 0; padding: 0;}
+
+a, a:visited {text-decoration: none;}
+ol, ul, li {list-style-type: none;}
+.clearfix:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+        }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+body {
+	position: relative;
+    background: url(images/leather-bit.jpg);
+	transition:all .5s linear; 
+    -o-transition:all .5s linear; 
+    -moz-transition:all .5s linear; 
+    -webkit-transition:all .5s linear;
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+}
+
+/* Column Structure
+-------------------------------------------------------------- */
+/*Nested columns, based on Matthew James Taylor's Perfect Responxive 3-column Layout*/
+/*Initial divs wrap content to allow fluid columns, with semantic content*/
+/* http://matthewjamestaylor.com/)*/
+
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column container settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
+	position:relative;
+}
+
+/*common column settings*/
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow:hidden;
+}
+
+/*column container structure/width*/
+
+.colmid {
+	right:25%;			/* width of the right column */
+	min-width: 400px;
+}
+.colleft {
+	right:50%;			/* width of the middle column */
+}
+
+
+
+#mid-column {
+	width:46%;			/* width of center column content (column width minus padding on either side) */
+	left:102%;			/* 100% plus left padding of center column */
+	min-width: 400px;
+}
+#left-column {
+	width:21%;			/* Width of left column content (column width minus padding on either side) */
+	left:31%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+	text-align: center;
+}
+#right-column {
+	width:21%;			/* Width of right column content (column width minus padding on either side) */
+	left:85%;			/* Please make note of the brackets here:(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+	text-align: center;				
+}
+
+
+
+
+/* Content Styling
+-------------------------------------------------------------- */
+
+
+#announcements {
+	width: 75%;
+	min-width: 400px;
+	background: #FCF0AD;
+	font-family: 'Architects Daughter';
+	font-size: .9em;
+	text-align: center; 
+	-moz-box-shadow: 0 0 5px 5px #3a272d;
+	-webkit-box-shadow: 0 0 5px 5px#3a272d;
+	box-shadow: 0 0 5px 5px #3a272d;
+	margin: 15px auto;
+	padding: 10px;
+	min-height: 25px;
+	}
+
+
+
+/*Menu Content*/
+
+
+#menu {width: 70%; min-width: 400px; margin: 100px auto 10px auto; position: relative;
+	background: #fffce9; font-family:  Cambria,Georgia,serif;
+	color: #000; text-align: center;
+	-moz-box-shadow: 0 0 5px 5px #3a272d;
+	-webkit-box-shadow: 0 0 5px 5px#3a272d;
+	box-shadow: 0 0 5px 5px #3a272d; padding: 15px;}
+
+#logo {
+	margin: -100px auto;
+	background: url(images/Tigress-logo.png) no-repeat;
+	width: 300px;
+	height: 159px;
+	display: block; 
+	text-indent: -99999px;
+	overflow: hidden;
+	}
+
+
+#mobile-info {display: none;}
+
+h1 {
+	padding-top: 60px;
+	
+}
+
+#intro {
+	padding-bottom: 30px;
+}
+
+#menu ul {
+	list-style-type: none;
+}
+
+#menu li {
+	padding-bottom: 20px;
+}
+
+
+#menu h2 {
+	font-style: italic;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+
+/*Left Column: Info Box, Social Media Buttons*/
+
+
+
+#info {
+	width: 85%;
+	margin: 50px 5% 10px 5%;
+	background: #000;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	position: relative;
+	padding: 10px;
+	border: 1px solid #fff;
+	-moz-box-shadow: inset 0 0 0 1px red;
+	-webkit-box-shadow: inset 0 0 0 1px red;
+	box-shadow: inset 0 0 0 1px red;
+	color: #fff;
+	font-family: 'Architects Daughter';
+}
+
+.shadow {
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	
+}
+ 
+#contact {
+	margin: 75px 25% 0 25%;
+	padding: 5px;
+	clear: both
+	text-align: center; 
+	background: black; 
+	-moz-border-radius: 3px;
+	border-radius: 3px; 
+	border-radius: 3px; border: 1px solid #666;  
+	font-family: 'Architects Daughter';
+	font-size: .8em;}
+
+#contact a, a:visited {color: #fff;}
+
+
+#info h3 {
+	font-size: 1.13em;
+	color: white;
+	text-align: center;
+	font-family: 'Architects Daughter';
+	font-weight: normal;
+}
+
+#info .email {color: white; font-family: 'Architects Daughter'; font-size: .7em; padding-top: 15px;}
+
+#info h3:first-child {margin-top: 30px;}
+
+#info a, a:visited {
+	text-decoration: underline; color: #fff;
+}
+
+#info a.gstyle {color: #99ffff; text-decoration: none;}
+
+.widen {letter-spacing: 4px;}
+
+#button-box {margin: 0 30%%; width: 40%;}
+#facebook_link {float: left; margin-right: 5px; width: 38px; height: 38px; display: block; background: url(images/fb-box-2.gif); text-indent: -9999px; overflow: hidden;} 
+#twitter_link {float: right; width: 38px; height: 38px; display: block; background: url(images/twitter-box2.gif); text-indent: -9999px; overflow: hidden;} 
+
+
+
+/*Photos*/
+
+#left-column .photo {margin-top: 15px;}
+
+#right-column {margin-top: 150px;}
+
+.photo {
+	width: 80%;
+	padding: 0;
+	border: 10px solid white;
+	border-bottom: 15px solid white;
+	margin: 10px auto;
+	-moz-box-shadow: 0 0 5px 5px #3a272d;
+	-webkit-box-shadow: 0 0 5px 5px#3a272d;
+	box-shadow: 0 0 5px 5px #3a272d;
+}
+
+
+/* Footer Styling
+-------------------------------------------------------------- */
+
+#colophon
+{color: #fff; font-family: 'Architects Daughter'; float: right;}
+
+#colophon a, #colophon a:visited {color: #fff; text-decoration: underline;}
+
+
+
+
+
+/* Mobile/Tablet Styling
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 775px) {
+	
+	.colright {display: none;}
+	.col2, .col3 {display: none;}
+	.colleft {right: 100%;}
+	.colmid {right: 0%;}
+	#mid-column {left: 125%;}
+	#mobile-info {display: block; padding-top: 50px;}
+	#menu p {width: 90%;}
+}
+
+
+@media screen and (max-width: 480px) {
+	#mid-column {width: 100%;}
+	.colleft {right: 125%;}
+}
+
+
+
+
+@font-face {
+    font-family: 'Architects Daughter';
+    src: url('/wp-content/themes/Tigress_Theme/AD/ArchitectsDaughter-webfont.eot');
+    src: url('/wp-content/themes/Tigress_Theme/AD/ArchitectsDaughter-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/Tigress_Theme/AD/ArchitectsDaughter-webfont.woff') format('woff'),
+         url('/wp-content/themes/Tigress_Theme/AD/ArchitectsDaughter-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/Tigress_Theme/AD/ArchitectsDaughter-webfont.svg#ArchitectsDaughterRegular') format('svg');
+ 
+}
+
+
+
+
+.
